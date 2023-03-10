@@ -2,8 +2,7 @@ import pandas
 import duckdb
 import pandas as pd
 
-PIB_municipios = pandas.read_excel("/Users/marcoshernan/Documents/Pessoal/Carreira/Orbital "
-                                   "- engenheiro de dados/orbital_teste_engenheiro_de_dados/01_Pib_Municipios_tabelas_completas.xlsx",
+PIB_municipios = pandas.read_excel("rota inicial",
                                    sheet_name=None)
 
 state_slugs = {"Brasil": "Brasil",
@@ -92,12 +91,9 @@ def create_treated_dataframes_PIB_municipios():
                       "Tabela 8": "Top cities - Others",
                       "Tabela 9": "Top 5 cities over state GDP"}
 
-    # writer = pd.ExcelWriter("/Users/marcoshernan/Documents/Pessoal/Carreira/Orbital - "
-    #                         "engenheiro de dados/orbital_teste_engenheiro_de_dados/Após tratamento/"
-    #                         "Tabelas 1/PIB_municipios.xlsx", engine='xlsxwriter')
+    # writer = pd.ExcelWriter("rota final/PIB_municipios.xlsx", engine='xlsxwriter')
 
-    path = "/Users/marcoshernan/Documents/Pessoal/Carreira/Orbital - " \
-           "engenheiro de dados/orbital_teste_engenheiro_de_dados/Após tratamento/Tabelas 1"
+    path = "rota final"
 
     for table in PIB_municipios:
         if table != "Tabela 4" and table != "Tabela 9":
