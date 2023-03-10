@@ -2,8 +2,7 @@ import pandas
 
 import pandas as pd
 
-path = "//Users/marcoshernan/Documents/Pessoal/Carreira/Orbital - " \
-       "engenheiro de dados/orbital_teste_engenheiro_de_dados"
+path = "rota inicial"
 
 sheet_name_map = {"Tab 5_20210817": "Property - City size",
                   "Tab 6_20210817": "Property - State",
@@ -86,7 +85,7 @@ header_destatization = ["Region_Size", "nº_cities", "iniciatives_last_2_years",
 
 
 def create_treated_dataframes():
-    # writer = pd.ExcelWriter(path + "/Após tratamento/Tabelas 2/recursos_gestao.xlsx", engine='xlsxwriter')
+    # writer = pd.ExcelWriter(path + "rota final/recursos_gestao.xlsx", engine='xlsxwriter')
 
     for table_name in sheet_name_map.keys():
         if table_name in docs_list_real_estate:
@@ -98,7 +97,7 @@ def create_treated_dataframes():
             df["state_slugs"] = df["Region_Size"].map(state_slugs)  # Adiciona uma coluna com os slugs de estados
             df.insert(1, 'state_slugs', df.pop('state_slugs'))
 
-            df.to_csv(path + f'/Após tratamento/Tabelas 2/{sheet_name_map[table_name]}.csv', index=False)
+            df.to_csv(path + f'/rota final/{sheet_name_map[table_name]}.csv', index=False)
             # df.to_excel(writer, sheet_name=sheet_name_map[table_name])
 
         elif table_name in docs_list_tax:
@@ -110,7 +109,7 @@ def create_treated_dataframes():
             df["state_slugs"] = df["Region_Size"].map(state_slugs)  # Adiciona uma coluna com os slugs de estados
             df.insert(1, 'state_slugs', df.pop('state_slugs'))
 
-            df.to_csv(path + f'/Após tratamento/Tabelas 2/{sheet_name_map[table_name]}.csv', index=False)
+            df.to_csv(path + f'/rota final/{sheet_name_map[table_name]}.csv', index=False)
             # df.to_excel(writer, sheet_name=sheet_name_map[table_name])
 
         elif table_name in docs_list_incentive:
@@ -122,7 +121,7 @@ def create_treated_dataframes():
             df["state_slugs"] = df["Region_Size"].map(state_slugs)  # Adiciona uma coluna com os slugs de estados
             df.insert(1, 'state_slugs', df.pop('state_slugs'))
 
-            df.to_csv(path + f'/Após tratamento/Tabelas 2/{sheet_name_map[table_name]}.csv', index=False)
+            df.to_csv(path + f'/rota final/{sheet_name_map[table_name]}.csv', index=False)
             # df.to_excel(writer, sheet_name=sheet_name_map[table_name])
 
         elif table_name in docs_list_restrictions:
@@ -134,7 +133,7 @@ def create_treated_dataframes():
             df["state_slugs"] = df["Region_Size"].map(state_slugs)  # Adiciona uma coluna com os slugs de estados
             df.insert(1, 'state_slugs', df.pop('state_slugs'))
 
-            df.to_csv(path + f'/Após tratamento/Tabelas 2/{sheet_name_map[table_name]}.csv', index=False)
+            df.to_csv(path + f'/rota final/{sheet_name_map[table_name]}.csv', index=False)
             # df.to_excel(writer, sheet_name=sheet_name_map[table_name])
 
         elif table_name in docs_list_destatization:
@@ -146,7 +145,7 @@ def create_treated_dataframes():
             df["state_slugs"] = df["Region_Size"].map(state_slugs)  # Adiciona uma coluna com os slugs de estados
             df.insert(1, 'state_slugs', df.pop('state_slugs'))
 
-            df.to_csv(path + f'/Após tratamento/Tabelas 2/{sheet_name_map[table_name]}.csv', index=False)
+            df.to_csv(path + f'/rota final/Tabelas 2/{sheet_name_map[table_name]}.csv', index=False)
             # df.to_excel(writer, sheet_name=sheet_name_map[table_name])
 
     # writer.save()
